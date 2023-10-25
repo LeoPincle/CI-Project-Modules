@@ -5,9 +5,6 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "project-ci-12-terraform-state"
-    key    = "project/vpc/terraform.tfstate"
-    region = "us-east-2"
   }
 }
 
