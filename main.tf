@@ -4,7 +4,11 @@ provider "aws" {
 }
 
 terraform {
-  backend "s3" {}
+  backend "s3" {
+    bucket = "project-ci-12-terraform-state"
+    key    = "project/vpc/terraform.tfstate"
+    region = "us-east-2"
+  }
 }
 
 data "aws_secretsmanager_secret" "rds" {
