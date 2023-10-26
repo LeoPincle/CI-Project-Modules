@@ -4,13 +4,7 @@ provider "aws" {
 }
 
 terraform {
-  backend "s3" {
-    bucket         = "project-ci-12-terraform-state"
-    key            = "project/vpc/terraform.tfstate"
-    region         = "us-east-2"
-    encrypt        = true
-    dynamodb_table = "project-table"
-  }
+  backend "s3" {}
 }
 
 data "aws_secretsmanager_secret" "rds" {
